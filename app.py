@@ -3,6 +3,9 @@ from flask import Flask, request, jsonify, send_file
 import google.generativeai as genai
 from faster_whisper import WhisperModel
 from gtts import gTTS
+from benx_1 import create_app
+from waitress import serve
+
 
 # pip install Flask google-generativeai faster-whisper gtts
 
@@ -54,4 +57,6 @@ def process_audio():
     return send_file(output_path, mimetype="audio/wav")
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    #app.run(host="0.0.0.0", port=5000, debug=True)
+    
+    serve(app, host="0.0.0.0", port=8000)

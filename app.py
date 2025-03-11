@@ -3,7 +3,6 @@ from flask import Flask, request, jsonify, send_file
 import google.generativeai as genai
 from faster_whisper import WhisperModel
 from gtts import gTTS
-from benx_1 import create_app
 from waitress import serve
 
 

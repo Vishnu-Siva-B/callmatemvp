@@ -22,7 +22,7 @@ def transcribe_audio(input_file):
 
 # Function to generate AI response with memory optimization
 def generate_response(prompt):
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    model = genai.GenerativeModel("gemini-2.0-flash")
     response = model.generate_content(
         prompt, 
         generation_config={"max_output_tokens": 256}  # Limit response size to reduce memory usage
